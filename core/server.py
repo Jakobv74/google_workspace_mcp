@@ -481,7 +481,7 @@ async def health_check(request: Request):
 
 
 @server.custom_route("/.well-known/mcp/server-card", methods=["GET"])
-@server.custom_route("/.well-known/mcp/server-card/", methods=["GET"])
+@server.custom_route("/.well-known/mcp/server-card/mcp", methods=["GET"])
 async def server_card(request: Request):
     """Serve the MCP server card for Mistral Le Chat and other MCP clients."""
     base_url = os.environ.get("BASE_URL", str(request.base_url).rstrip("/"))
